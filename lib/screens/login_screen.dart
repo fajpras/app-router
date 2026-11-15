@@ -205,6 +205,7 @@ class _GatewayLoginScreenState extends State<GatewayLoginScreen> {
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 textStyle: const TextStyle(
+                                  fontFamily: 'Roboto',
                                   fontSize: 13,
                                   fontWeight: FontWeight.w700,
                                   letterSpacing: 1.0,

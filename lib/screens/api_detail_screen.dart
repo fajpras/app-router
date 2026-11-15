@@ -439,16 +439,20 @@ class _ApiDetailScreenState extends State<ApiDetailScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      _route.isUnlimited
-                                          ? 'Total: ${AiRoute.formatTokens(_route.usedTokens)}'
-                                          : 'Total: ${AiRoute.formatTokens(_route.usedTokens)} / ${AiRoute.formatTokens(_route.quotaTokens)}',
-                                      style: const TextStyle(
-                                        fontFamily: 'monospace',
-                                        fontSize: 11,
-                                        color: RouterColors.onSurfaceVariant,
+                                    Expanded(
+                                      child: Text(
+                                        _route.isUnlimited
+                                            ? 'Total: ${AiRoute.formatTokens(_route.usedTokens)}'
+                                            : 'Total: ${AiRoute.formatTokens(_route.usedTokens)} / ${AiRoute.formatTokens(_route.quotaTokens)}',
+                                        overflow: TextOverflow.ellipsis,
+                                        style: const TextStyle(
+                                          fontFamily: 'monospace',
+                                          fontSize: 11,
+                                          color: RouterColors.onSurfaceVariant,
+                                        ),
                                       ),
                                     ),
+                                    const SizedBox(width: 8),
                                     Text(
                                       '\$${_route.spentUsd.toStringAsFixed(2)} spent',
                                       style: const TextStyle(
@@ -525,29 +529,35 @@ class _ApiDetailScreenState extends State<ApiDetailScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        width: 6,
-                                        height: 6,
-                                        decoration: BoxDecoration(
-                                          color: traces[i].isSuccess
-                                              ? RouterColors.tertiary
-                                              : RouterColors.error,
-                                          shape: BoxShape.circle,
+                                  Expanded(
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: 6,
+                                          height: 6,
+                                          decoration: BoxDecoration(
+                                            color: traces[i].isSuccess
+                                                ? RouterColors.tertiary
+                                                : RouterColors.error,
+                                            shape: BoxShape.circle,
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Text(
-                                        traces[i].statusLabel,
-                                        style: const TextStyle(
-                                          fontFamily: 'monospace',
-                                          fontSize: 12,
-                                          color: RouterColors.onSurface,
+                                        const SizedBox(width: 8),
+                                        Expanded(
+                                          child: Text(
+                                            traces[i].statusLabel,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: const TextStyle(
+                                              fontFamily: 'monospace',
+                                              fontSize: 12,
+                                              color: RouterColors.onSurface,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
+                                  const SizedBox(width: 8),
                                   Text(
                                     traces[i].detailLabel,
                                     style: const TextStyle(

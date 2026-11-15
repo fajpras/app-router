@@ -34,6 +34,7 @@ ThemeData buildRouterTheme() {
   return ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
+    fontFamily: 'Roboto',
     scaffoldBackgroundColor: RouterColors.surface,
     colorScheme: const ColorScheme.dark(
       surface: RouterColors.surface,

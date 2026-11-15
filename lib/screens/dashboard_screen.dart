@@ -461,28 +461,34 @@ class _TrafficRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Text(
-                status,
-                style: const TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 11,
-                  fontWeight: FontWeight.w500,
-                  color: RouterColors.tertiary,
+          Expanded(
+            child: Row(
+              children: [
+                Text(
+                  status,
+                  style: const TextStyle(
+                    fontFamily: 'monospace',
+                    fontSize: 11,
+                    fontWeight: FontWeight.w500,
+                    color: RouterColors.tertiary,
+                  ),
                 ),
-              ),
-              const SizedBox(width: 8),
-              Text(
-                target,
-                style: const TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 11,
-                  color: Colors.white,
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    target,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontFamily: 'monospace',
+                      fontSize: 11,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
+          const SizedBox(width: 8),
           Text(
             latency,
             style: const TextStyle(

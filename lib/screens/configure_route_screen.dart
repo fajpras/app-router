@@ -365,6 +365,7 @@ class _ConfigureRouteScreenState extends State<ConfigureRouteScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           textStyle: const TextStyle(
+                            fontFamily: 'Roboto',
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
                           ),
